@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML Flask API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+  .first{ width: 100%; }
+  .secondbox{ float: left;  margin: 50px 57px 20px 86px; width: 40% }    
+  .thirdbox { float: left;  margin: 50px 57px 20px 86px; width: 40% }
+  /* .body{
+    background-image: url(../images/download.jpeg);
+    width: 100px;
+    height: 100px
+  } */
+  </style>
+</head>
+<body>
+ <form action="{{ url_for('predict')}}" method="post" name="form1">
+	<h2>Crop Yield prediction</h2>  
+ <div class="first">
+    <div>
+      <input type="text" name="State Number" placeholder="State Number (0 - 27)" required="required" style = "width: 50%"/>
+    <input type="text" name="Year" placeholder="Enter Year" required="required" style = "width: 50%"/><br> 
+     <!-- <input type="text" name="State" placeholder="Enter State" required="required" style = "width: 50%"/><br>  -->
+     <!-- <select>
+      <option>Andhra Pradesh</option>
+      <option>Arunachal Pradesh</option>
+      <option>Assam</option>
+      <option>Bihar</option>
+      <option>Goa</option>
+      <option>Gujarat</option>
+      <option>Haryana</option>
+      <option>Himachal Pradesh</option>
+      <option>Jammu and Kashmir</option>
+      <option>KARNATAKA</option>
+      <option>KERALA</option>
+      <option>MADHYA PRADESH</option>
+      <option>MAHARASHTRA</option>
+      <option>MANIPUR</option>
+      <option>MEGHALAYA</option>
+      <option>MIZORAM</option>
+      <option>NAGALAND</option>
+      <option>ORISSA</option>
+      <option>PUNJAB</option>
+      <option>RAJASTHAN</option>
+      <option>SIKKIM</option>
+      <option>TAMILNADU</option>
+      <option>TRIPURA</option>
+      <option>UTTAR PRADESH</option>
+      <option>WEST BENGAL</option>
+      <option>ANDAMAN & NICOBAR</option>
+      <option>DADRA AND NAGAR</option>
+      <option>DAMAN AND DIU</option>
+    </select><br>  -->
+    
+     <input type="text" name="Area" placeholder="Enter Area" required="required" style = "width: 50%"/>
+    <div>
+<button type="submit" class="h-center btn btn-primary btn-large" style="width: 50%">Predict</button>
+<br>
+<br>
+{{ prediction_text }} 
+{{ prediction_text }} 
+</div>
+</form> 
+</body>

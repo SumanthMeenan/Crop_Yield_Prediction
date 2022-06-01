@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML Flask API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<!-- <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'> -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'> -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div >
+	<!-- <h1>Flight Delay</h1> -->
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <input type="text" name="YEAR" placeholder="YEAR" required="required" />
+    <input type="text" name="MONTH" placeholder="MONTH" required="required" />
+		<input type="text" name="DAY" placeholder="DAY" required="required" />
+    <input type="text" name="LATE_AIRCRAFT_DELAY" placeholder="LATE_AIRCRAFT_DELAY" required="required" />
+    <input type="text" name="AIRLINE_DELAY" placeholder="AIRLINE_DELAY" required="required" />
+    <input type="text" name="AIR_SYSTEM_DELAY" placeholder="AIR_SYSTEM_DELAY" required="required" />
+    <input type="text" name="WEATHER_DELAY" placeholder="WEATHER_DELAY" required="required" />
+    <input type="text" name="ELAPSED_TIME" placeholder="ELAPSED_TIME" required="required" />
+    <input type="text" name="DEPARTURE_DELAY" placeholder="DEPARTURE_DELAY" required="required" />
+    <input type="text" name="SCHEDULED_TIME" placeholder="SCHEDULED_TIME" required="required" />
+    <input type="text" name="AIR_TIME" placeholder="AIR_TIME" required="required" />
+    <input type="text" name="DISTANCE" placeholder="DISTANCE" required="required" />
+    <input type="text" name="TAXI_IN" placeholder="TAXI_IN" required="required" />
+    <input type="text" name="TAXI_OUT" placeholder="TAXI_OUT" required="required" />
+    <input type="text" name="DAY_OF_WEEK" placeholder="DAY_OF_WEEK" required="required" />
+    <input type="text" name="SECURITY_DELAY" placeholder="SECURITY_DELAY" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
